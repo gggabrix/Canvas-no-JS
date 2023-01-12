@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<title>esquadro #2</title>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+//    Programa desenhar esquadro usando function
+
+//    Trazer o canvas lá do HTML para o JS
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+//    preenchimento do fundo
+        pincel.fillStyle = 'tan';
+        pincel.fillRect(0, 0, 600, 400);
+
+//  função criar esquadro
+    function desenharEsquadro(xa, ya, xc, yc, cor){
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.moveTo(xa, ya);
+        pincel.lineTo(xa, yc);
+        pincel.lineTo(xc, yc);
+        pincel.fill();
+
+        pincel.fillStyle = 'tan';
+        pincel.beginPath();
+        pincel.moveTo((6 * xa + xc) / 7, (9 * ya + 5 * yc) / 14);
+        pincel.lineTo((6 * xa + xc) / 7, (ya + 6 * yc) / 7);
+        pincel.lineTo((5 * xa + 9 * xc) / 14, (ya + 6 * yc) / 7);
+        pincel.fill();
+
+    }
+
+    desenharEsquadro(600, 0, 200, 400, 'olive');
+    desenharEsquadro(200, 200, 350, 50, 'olive');
+    desenharEsquadro(0, 0, 300, 300, 'darkgoldenrod');
+    desenharEsquadro(450, 150, 350, 50, 'darkgoldenrod');
+    desenharEsquadro(350, 300, 200, 150, 'sienna');
+    //desenharEsquadro(350, 50, 450, 150, 'sienna');
+    desenharEsquadro(350, 250, 450, 150, 'darkolivegreen');
+
+</script>

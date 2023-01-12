@@ -1,0 +1,31 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+
+    function pintaQuadrado(xInicial, yInicial, xFinal, yFinal, cor) {
+        pincel.fillStyle = cor;
+        pincel.fillRect(xInicial, yInicial, xFinal, yFinal);
+        pincel.fillStroke = "black"
+        pincel.strokeStyle = "black"
+        pincel.strokeRect(xInicial, yInicial, xFinal, yFinal)
+    }
+
+
+    var xInicial = 0
+    var yInicial = 50
+    while (xInicial < 600){
+        pintaQuadrado(xInicial, 0, 50, 50, "green");
+        xInicial = xInicial + 50
+        pintaQuadrado(0, yInicial, 50, 50, "red");
+        yInicial = yInicial + 50
+
+    }
+
+    // pintaQuadrado(0, 0, 50, 50, "green");
+    // pintaQuadrado(50, 0, 50, 50, "green");
+    // pintaQuadrado(100, 0, 50, 50, "green");
+
+</script>
